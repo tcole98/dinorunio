@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "DinoRun",
+  "description": "Sometimes you just need to DinoRun",
+  "version": "1.4.1",
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; http://dinorun.io/; object-src 'self'",
+  "permissions": ["https://www.google-analytics.com/*", "http://dinorun.io/*"],
+
+  "icons": { "16": "rex.png",
+             "48": "rex.png",
+            "128": "rex.png" },
+
+  "browser_action": {
+    "default_popup": "./app/index.html"
+  }
+
+}
+
