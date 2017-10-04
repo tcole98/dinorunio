@@ -31,6 +31,16 @@
             width:100%;
             background:#999;
         }
+div.tab-frame input{ display:none;}
+div.tab-frame label{ display:block; float:left;padding:5px 10px; cursor:pointer}
+div.tab-frame input:checked + label{ background:black; color:white; cursor:default}
+div.tab-frame div.tab{ display:none; padding:5px 10px;clear:left}
+
+div.tab-frame input:nth-of-type(1):checked ~ .tab:nth-of-type(1),
+div.tab-frame input:nth-of-type(2):checked ~ .tab:nth-of-type(2),
+div.tab-frame input:nth-of-type(3):checked ~ .tab:nth-of-type(3){ display:block;}
+
+body{width:600px;margin:20px auto;font-family:Arial;}
     </style>
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="/app/favicon.ico" type="image/x-icon">
@@ -50,7 +60,20 @@
     <div>
         <p style="margin: auto; text-align: center; font-size: 5em;"><strong>Global Leaderboard</strong></p>
         <br>
-    <table id="id01"></table>
+        <div class="tab-frame">
+          <input type="radio" checked name="tab" id="tab1">
+          <label for="tab1">Daily</label>
+
+          <input type="radio" name="tab" id="tab2">
+          <label for="tab2">Weekly</label>
+
+          <input type="radio" name="tab" id="tab3">
+          <label for="tab3">All Time</label>
+
+          <div class="tab"><table id="id02"></table></div>
+          <div class="tab"><table id="id03"></table></div>
+          <div class="tab"><table id="id01"></table></div>
+        </div>
     </div>
 </body>
 <script>
@@ -74,6 +97,50 @@
             out += '<tr><td>' + '#' + [i + 1] + '</td>' + '<td>' + arr[i].nickname + '</td>' + '<td>' +
             arr[i].score + '</td></tr>';
             document.getElementById("id01").innerHTML = out;
+        }
+    }
+    var xmlhttp2 = new XMLHttpRequest();
+    var url2 = "/getdata2";
+
+    xmlhttp2.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myArr2 = JSON.parse(this.responseText);
+            myFunction2(myArr2);
+        }
+    };
+
+    xmlhttp2.open("GET", url2, true);
+    xmlhttp2.send();
+
+    function myFunction2(arr2) {
+        var out2 = "";
+        var ii;
+        for(ii = 0; ii < arr2.length; ii++) {
+            out2 += '<tr><td>' + '#' + [ii + 1] + '</td>' + '<td>' + arr2[ii].nickname + '</td>' + '<td>' +
+            arr2[ii].score + '</td></tr>';
+            document.getElementById("id02").innerHTML = out2;
+        }
+    }
+    var xmlhttp3 = new XMLHttpRequest();
+    var url3 = "/getdata3";
+
+    xmlhttp3.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myArr3 = JSON.parse(this.responseText);
+            myFunction3(myArr3);
+        }
+    };
+
+    xmlhttp3.open("GET", url3, true);
+    xmlhttp3.send();
+
+    function myFunction3(arr3) {
+        var out3 = "";
+        var iii;
+        for(iii = 0; iii < arr3.length; iii++) {
+            out3 += '<tr><td>' + '#' + [iii + 1] + '</td>' + '<td>' + arr3[iii].nickname + '</td>' + '<td>' +
+            arr3[iii].score + '</td></tr>';
+            document.getElementById("id03").innerHTML = out3;
         }
     }
 </script>

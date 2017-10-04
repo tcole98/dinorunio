@@ -1,6 +1,6 @@
 import requests
 
-r = requests.post('http://127.0.0.1:5000/create', json={'nickname': 'sdfasdaffasd', 'score': 1})
+r = requests.post('http://127.0.0.1:5000/create', json={'nickname': 'fdsa', 'score': 3000013})
 
 r = requests.get('http://127.0.0.1:5000/getdata')
 
