@@ -23,9 +23,17 @@ def otherstuff():
 def sprite():
     return send_file('100-offline-sprite.png')
 
-@app.route('/assets/default_100_percent/200-offline-sprite.png')
+@app.route('/assets/default_200_percent/200-offline-sprite.png')
 def sprite2():
     return send_file('200-offline-sprite.png')
+
+@app.route('/assets/default_100_percent/100-error-offline.png')
+def sprite3():
+    return send_file('100-error-offline.png')
+
+@app.route('/assets/default_200_percent/200-error-offline.png')
+def sprite4():
+    return send_file('200-error-offline.png')
 
 @app.route('/app/favicon.ico')
 def favicon():
