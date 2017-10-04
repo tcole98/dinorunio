@@ -67,10 +67,10 @@ p {
   bottom:100px;
 }
 
-.icon-offline {
-  content: -webkit-image-set( url(100-error-offline.png) 1x, url(200-error-offline.png) 2x);
-  position: relative;
-}
+/*.icon-offline {*/
+  /*content: -webkit-image-set( url(100-error-offline.png) 1x, url(200-error-offline.png) 2x);*/
+  /*position: relative;*/
+/*}*/
 
 .inlineRight {
   text-align: right;
