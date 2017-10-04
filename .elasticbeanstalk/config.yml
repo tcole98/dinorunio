@@ -2,6 +2,8 @@ branch-defaults:
   default:
     environment: dinorunio-dev
     group_suffix: null
+  master:
+    environment: dinorunio-dev
 global:
   application_name: dinorunio
   branch: null
