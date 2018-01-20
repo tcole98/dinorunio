@@ -6,7 +6,7 @@ r = requests.get('http://127.0.0.1:5000/getdata')
 
 # eb ssh dinorunio-dev
 # /opt/python/bundle/2/app/app.db
-# ssh -i /Users/tristancole/.ssh/aws-eb ec2-user@13.55.83.252 'cat /opt/python/bundle/2/app/app.db' > ~/desktop/app.db
+# ssh -i /Users/tristancole/.ssh/aws-eb ec2-user@13.55.83.252 'cat /opt/python/bundle/4/app/app.db' > ~/desktop/app.db
 # eb ssh
 # find / -name "app.db"
 

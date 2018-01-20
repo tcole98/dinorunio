@@ -793,15 +793,15 @@
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
-            }
-            // Show Input Box & Leaderboard. Hide Submitted!
+                // Show Input Box & Leaderboard. Hide Submitted!
                 document.getElementById("submitted").style.display = "none";
                 document.getElementById("inputbox").style.display = "block";
                 document.getElementById("leaderboardimg").style.display = "block";
+            }
 
             // Set Hidden Input Score Value
                 document.getElementById("hiddenscore").value = Math.floor(this.distanceRan / 40);
-                document.getElementById("nickname").value
+                document.getElementById("nickname").value;
 
             // Reset the time clock.
             this.time = getTimeStamp();
